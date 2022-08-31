@@ -1,0 +1,76 @@
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+Overriding model.yaml nc=80 with nc=1
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Conv                      [3, 32, 6, 2, 2]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  2     40960  models.common.MobileOne                 [64, 64, 4, 1, False]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  2    147456  models.common.MobileOne                 [128, 128, 4, 1, False]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  2    557056  models.common.MobileOne                 [256, 256, 4, 1, False]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  2   2162688  models.common.MobileOne                 [512, 512, 4, 1, False]
+  9                -1  1    656896  models.common.SPPF                      [512, 512, 5]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     16182  models.yolo.Detect                      [1, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+Traceback (most recent call last):
+  File "train.py", line 666, in <module>
+    main(opt)
+  File "train.py", line 561, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "train.py", line 120, in train
+    model = Model(cfg or ckpt['model'].yaml, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)  # create
+  File "/home/ymm/test/yolov5-master/models/yolo.py", line 121, in __init__
+    m.stride = torch.tensor([s / x.shape[-2] for x in self.forward(torch.zeros(1, ch, s, s))])  # forward
+  File "/home/ymm/test/yolov5-master/models/yolo.py", line 135, in forward
+    return self._forward_once(x, profile, visualize)  # single-scale inference, train
+  File "/home/ymm/test/yolov5-master/models/yolo.py", line 158, in _forward_once
+    x = m(x)  # run
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/test/yolov5-master/models/common.py", line 1025, in forward
+    x = self.m(x)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/test/yolov5-master/models/common.py", line 995, in forward
+    x = getattr(self, f'dw_3x3_{k_idx}')(inputs)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/test/yolov5-master/models/common.py", line 914, in forward
+    return self.conv(x)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 443, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/ymm/anaconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 439, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+TypeError: conv2d() received an invalid combination of arguments - got (Tensor, Parameter, NoneType, tuple, tuple, tuple, int), but expected one of:
+ * (Tensor input, Tensor weight, Tensor bias, tuple of ints stride, tuple of ints padding, tuple of ints dilation, int groups)
+      didn't match because some of the arguments have invalid types: ([32mTensor[39m, [31mParameter[39m, [31mNoneType[39m, [31mtuple[39m, [31mtuple[39m, [31mtuple[39m, [32mint[39m)
+ * (Tensor input, Tensor weight, Tensor bias, tuple of ints stride, str padding, tuple of ints dilation, int groups)
+      didn't match because some of the arguments have invalid types: ([32mTensor[39m, [31mParameter[39m, [31mNoneType[39m, [31mtuple[39m, [31mtuple[39m, [31mtuple[39m, [32mint[39m)

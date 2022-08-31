@@ -1,0 +1,14 @@
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+                 from  n    params  module                                  arguments
+Traceback (most recent call last):
+  File "/home/ymm/test/yolov5-master/train.py", line 666, in <module>
+    main(opt)
+  File "/home/ymm/test/yolov5-master/train.py", line 561, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "/home/ymm/test/yolov5-master/train.py", line 120, in train
+    model = Model(cfg or ckpt['model'].yaml, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)  # create
+  File "/home/ymm/test/yolov5-master/models/yolo.py", line 112, in __init__
+    self.model, self.save = parse_model(deepcopy(self.yaml), ch=[ch])  # model, savelist
+  File "/home/ymm/test/yolov5-master/models/yolo.py", line 269, in parse_model
+    BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, SE, ECA, CBAM, CA):
+NameError: name 'CA' is not defined

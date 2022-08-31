@@ -1,0 +1,23 @@
+{
+    "os": "Linux-5.4.0-124-generic-x86_64-with-glibc2.17",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-08-12T15:51:19.646470",
+    "startedAt": "2022-08-12T15:50:52.402833",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": "10.2.300",
+    "args": [
+        "--cfg",
+        "models/yolov5s_acmix.yaml",
+        "--batch-size",
+        "4"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "host": "ymm-y7000",
+    "username": "ymm",
+    "executable": "/home/ymm/anaconda3/envs/pytorch/bin/python"
+}

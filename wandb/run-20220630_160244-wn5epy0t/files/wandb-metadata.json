@@ -1,0 +1,31 @@
+{
+    "os": "Linux-5.4.0-120-generic-x86_64-with-glibc2.17",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-06-30T08:02:51.978000",
+    "startedAt": "2022-06-30T08:02:44.924855",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": "11.0.207",
+    "args": [
+        "--data",
+        "data/VOC_node.yaml",
+        "--cfg",
+        "models/yolov5s_node.yaml",
+        "--weights",
+        "weights/yolov5s.pt",
+        "--batch-size",
+        "8",
+        "--epochs",
+        "5",
+        "--workers",
+        "8"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "host": "ymm-y7000",
+    "username": "ymm",
+    "executable": "/home/ymm/anaconda3/envs/pytorch/bin/python"
+}

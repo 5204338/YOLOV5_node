@@ -1,0 +1,315 @@
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Conv                      [3, 32, 6, 2, 2]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     18816  models.common.C3                        [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  2    115712  models.common.C3                        [128, 128, 2]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    625152  models.common.C3                        [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1   1182720  models.common.C3                        [512, 512, 1]
+  9                -1  1    656896  models.common.SPPF                      [512, 512, 5]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     16182  models.yolo.Detect                      [1, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+YOLOv5s_node summary: 270 layers, 7022326 parameters, 7022326 gradients, 15.8 GFLOPs
+Transferred 342/349 items from weights/yolov5s.pt
+[34m[1mAMP: [39m[22mchecks passed ✅
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 57 weight (no decay), 60 weight, 60 bias
+[34m[1mtrain: [39m[22mScanning '/home/ymm/test/yolov5-master/VOCdevkit/labels/train.cache' imag
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/50.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/52.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/53.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/54.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/55.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/56.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/58.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/59.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/61.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/62.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/63.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/66.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/68.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/69.jpg: corrupt JPEG restored and saved
+[34m[1mtrain: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/train/70.jpg: corrupt JPEG restored and saved
+[34m[1mval: [39m[22mScanning '/home/ymm/test/yolov5-master/VOCdevkit/labels/val.cache' images a
+[34m[1mval: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/val/51.jpg: corrupt JPEG restored and saved
+[34m[1mval: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/val/57.jpg: corrupt JPEG restored and saved
+[34m[1mval: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/val/60.jpg: corrupt JPEG restored and saved
+[34m[1mval: [39m[22mWARNING: /home/ymm/test/yolov5-master/VOCdevkit/images/val/67.jpg: corrupt JPEG restored and saved
+Plotting labels to runs/train/exp6/labels.jpg...
+[34m[1mAutoAnchor: [39m[22m5.33 anchors/target, 1.000 Best Possible Recall (BPR). Current anchors are a good fit to dataset ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mruns/train/exp6
+Starting training for 200 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+     0/199     1.69G    0.1225   0.05095         0        53       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     1/199     1.69G    0.1278   0.05023         0        90       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     2/199     1.69G    0.1246   0.05349         0        48       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     3/199     1.69G     0.125   0.05792         0        74       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     4/199     1.69G    0.1197   0.05091         0        38       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+     5/199     1.69G    0.1234   0.05828         0        67       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     6/199     1.69G    0.1225   0.05808         0        88       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     7/199     1.69G    0.1195   0.04995         0        47       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+  0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all          4          0          0          0          0          0
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     9/199     1.69G    0.1159   0.05399         0        71       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+    10/199     1.69G    0.1163   0.05718         0        69       640:  50%|███
+    11/199     1.69G    0.1202   0.07065         0       129       640:  50%|███
+    12/199     1.69G    0.1165   0.05711         0        85       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    15/199     1.69G    0.1157   0.06199         0        83       640: 100%|███
+    16/199     1.69G    0.1151   0.06179         0        72       640:  50%|███
+    17/199     1.69G    0.1116    0.0689         0        74       640:  50%|███
+    18/199     1.69G    0.1086   0.05891         0        59       640:  50%|███
+    19/199     1.69G    0.1132   0.06213         0        89       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+    20/199     1.69G    0.1108   0.05962         0        53       640: 100%|███
+    21/199     1.69G    0.1108   0.07008         0        67       640: 100%|███
+    22/199     1.69G    0.1061   0.05385         0        76       640:  50%|███
+    23/199     1.69G    0.1078   0.08802         0       123       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    27/199     1.69G    0.1042    0.0524         0        43       640: 100%|███
+    28/199     1.69G    0.1018    0.0664         0        69       640:  50%|███
+    29/199     1.69G    0.1082   0.07252         0        98       640:  50%|███
+    30/199     1.69G    0.1074   0.07288         0       100       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    35/199     1.69G   0.09939    0.0591         0        50       640: 100%|███
+    36/199     1.69G    0.1012   0.06338         0        46       640: 100%|███
+    37/199     1.69G    0.1039   0.07866         0       117       640:  50%|███
+    38/199     1.69G    0.1032   0.06327         0        74       640:  50%|███
+    39/199     1.69G    0.1055   0.07259         0       102       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    43/199     1.69G    0.1016   0.06125         0        93       640: 100%|███
+    44/199     1.69G    0.1048   0.05716         0        63       640: 100%|███
+    45/199     1.69G    0.1106   0.06299         0       100       640:  50%|███
+    46/199     1.69G    0.1001    0.0702         0        80       640:  50%|███
+    47/199     1.69G   0.09687   0.05462         0        57       640:  50%|███
+    48/199     1.69G   0.09987   0.07875         0        88       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    53/199     1.69G    0.1024   0.07408         0        74       640: 100%|███
+    54/199     1.69G   0.09784   0.07208         0       104       640: 100%|███
+    55/199     1.69G   0.09378   0.05479         0        54       640:  50%|███
+    56/199     1.69G    0.1014   0.07364         0       106       640:  50%|███
+    57/199     1.69G   0.09431   0.05745         0        88       640:  50%|███
+    58/199     1.69G   0.09485   0.07331         0       105       640:  50%|███
+    59/199     1.69G   0.09188   0.05718         0        61       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    63/199     1.69G    0.0942   0.06095         0        73       640: 100%|███
+    64/199     1.69G   0.09354   0.05612         0        85       640: 100%|███
+    65/199     1.69G   0.09411   0.06024         0        69       640:  50%|███
+    66/199     1.69G   0.09449   0.04185         0        62       640:  50%|███
+    67/199     1.69G   0.09524    0.0605         0        83       640:  50%|███
+    68/199     1.69G   0.09131   0.05564         0        69       640:  50%|███
+    69/199     1.69G   0.09095   0.04198         0        39       640:  50%|███
+    70/199     1.69G   0.09095   0.05473         0        69       640:  50%|███
+    71/199     1.69G   0.08659   0.06434         0        64       640:  50%|███
+    72/199     1.69G   0.09206   0.04575         0        60       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    77/199     1.69G   0.09313   0.06365         0        72       640: 100%|███
+    78/199     1.69G   0.09403   0.06344         0       106       640:  50%|███
+    79/199     1.69G    0.0869   0.04428         0        40       640:  50%|███
+    80/199     1.69G   0.08794   0.05962         0        70       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+    87/199     1.69G   0.08575   0.06267         0        75       640: 100%|███
+    88/199     1.69G    0.0857   0.05858         0        66       640: 100%|███
+    89/199     1.69G   0.08071   0.03655         0        29       640:  50%|███
+    90/199     1.69G      0.09   0.05736         0        81       640:  50%|███
+    91/199     1.69G    0.0868   0.04965         0        63       640:  50%|███
+    92/199     1.69G   0.08659   0.04623         0        52       640:  50%|███
+    93/199     1.69G    0.0847   0.06332         0        67       640:  50%|███
+    94/199     1.69G   0.08793   0.06348         0        91       640:  50%|███
+    95/199     1.69G   0.08521   0.05054         0        66       640:  50%|███
+    96/199     1.69G   0.08617   0.06086         0        87       640:  50%|███
+    97/199     1.69G   0.08275   0.04691         0        60       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   103/199     1.69G   0.09088   0.06094         0        94       640: 100%|███
+   104/199     1.69G   0.08555   0.05239         0        97       640: 100%|███
+   105/199     1.69G   0.08642   0.04454         0        35       640: 100%|███
+   106/199     1.69G    0.0877   0.04372         0        64       640:  50%|███
+   107/199     1.69G    0.0843   0.06474         0       111       640:  50%|███
+   108/199     1.69G    0.0827   0.05436         0        90       640:  50%|███
+   109/199     1.69G   0.08577   0.04846         0        99       640:  50%|███
+   110/199     1.69G     0.083   0.06574         0       107       640:  50%|███
+   111/199     1.69G   0.08114   0.04062         0        45       640:  50%|███
+   112/199     1.69G    0.0875   0.04257         0        64       640:  50%|███
+   113/199     1.69G   0.08262   0.04168         0        65       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   119/199     1.69G   0.08679   0.03898         0        27       640: 100%|███
+   120/199     1.69G   0.07924   0.05814         0       109       640:  50%|███
+   121/199     1.69G    0.0774   0.04445         0        84       640:  50%|███
+   122/199     1.69G   0.07689   0.05518         0        80       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   125/199     1.69G   0.08311   0.04996         0        78       640: 100%|███
+   126/199     1.69G   0.07969   0.04887         0        84       640:  50%|███
+   127/199     1.69G   0.07847   0.05092         0        75       640:  50%|███
+   128/199     1.69G   0.07985     0.037         0        47       640:  50%|███
+   129/199     1.69G   0.07516   0.04289         0        74       640:  50%|███
+   130/199     1.69G   0.07333   0.04475         0        66       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   133/199     1.69G   0.07662   0.04636         0        67       640: 100%|███
+   134/199     1.69G   0.07998   0.04161         0        79       640:  50%|███
+   135/199     1.69G    0.0708   0.04015         0        52       640:  50%|███
+   136/199     1.69G   0.07738   0.04281         0        80       640:  50%|███
+   137/199     1.69G   0.08141   0.04005         0        76       640:  50%|███
+   138/199     1.69G   0.07105   0.03452         0        36       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   145/199     1.69G   0.07748   0.06419         0       114       640: 100%|███
+   146/199     1.69G   0.07182   0.05004         0        61       640: 100%|███
+   147/199     1.69G   0.07028     0.033         0        40       640:  50%|███
+   148/199     1.69G   0.07346   0.04714         0       110       640:  50%|███
+   149/199     1.69G   0.07177   0.05132         0        91       640:  50%|███
+   150/199     1.69G   0.06918   0.03984         0        56       640:  50%|███
+   151/199     1.69G   0.07005   0.04479         0        75       640:  50%|███
+   152/199     1.69G   0.07155   0.05379         0        73       640:  50%|███
+   153/199     1.69G   0.07153    0.0461         0        94       640:  50%|███
+   154/199     1.69G   0.07151   0.03987         0        46       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   159/199     1.69G   0.06412   0.04571         0        47       640: 100%|███
+   160/199     1.69G   0.06921   0.05093         0        78       640:  50%|███
+   161/199     1.69G   0.06845   0.04836         0        76       640:  50%|███
+   162/199     1.69G    0.0641   0.04109         0        61       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   165/199     1.69G   0.06817   0.04331         0        59       640: 100%|███
+   166/199     1.69G   0.07347   0.04264         0        70       640:  50%|███
+   167/199     1.69G   0.07257   0.03991         0        54       640:  50%|███
+   168/199     1.69G     0.071   0.04944         0       105       640:  50%|███
+   169/199     1.69G    0.0649   0.05947         0        96       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   172/199     1.69G   0.06796   0.03751         0        44       640: 100%|███
+   173/199     1.69G   0.06645   0.05035         0        84       640:  50%|███
+   174/199     1.69G   0.06494   0.04281         0        55       640:  50%|███
+   175/199     1.69G   0.06792   0.05908         0       124       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   178/199     1.69G   0.06965   0.04682         0        79       640:  50%|███
+   179/199     1.69G     0.077   0.05002         0        99       640:  50%|███
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+   182/199     1.69G   0.06288   0.04177         0        48       640: 100%|███
+   183/199     1.69G   0.05983   0.04524         0        69       640:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  50%|███
+                 all          4         21      0.545      0.714      0.665      0.264
+                 all          4         21      0.545      0.714      0.665      0.264
+                 all          4         21      0.545      0.714      0.665      0.264
+                 all          4         21      0.545      0.714      0.665      0.264
