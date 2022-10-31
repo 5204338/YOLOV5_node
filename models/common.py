@@ -27,6 +27,9 @@ from utils.general import (LOGGER, check_requirements, check_suffix, check_versi
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import copy_attr, time_sync
 from models.Models.Attention.ShuffleAttention import ShuffleAttention
+#shufflenetv2
+from torch import Tensor 
+from typing import Callable, Any, List
 
 
 # 为same卷积或same池化自动扩充，保持卷积和池化的特征图相同
