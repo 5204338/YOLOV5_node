@@ -266,7 +266,7 @@ def parse_model(d, ch):  # model_dict, input_channels(3)  d是读取yaml文件�
 
         n = n_ = max(round(n * gd), 1) if n > 1 else n  # depth gain  控制深度的代码，往往是C3模块需要乘以深度倍率
         if m in (Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv,
-                 BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, SE, ECA, CBAM, CoordAtt ,MobileOne, CBRM, Shuffle_Block):  #判读这一层的模块是什么结构
+                 BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, SE, ECA, CBAM, CoordAtt ,MobileOne, CBRM, Shuffle_Block, conv_bn_relu_maxpool,ShuffleNetV2_InvertedResidual):  #判读这一层的模块是什么结构
             #这部分代码是conv层需要执行的
             c1, c2 = ch[f], args[0]
             if c2 != no:  # if not output  判读c2 输出通道数是否需要乘以yaml文件中的宽度倍率
