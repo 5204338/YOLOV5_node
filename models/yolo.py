@@ -266,7 +266,11 @@ def parse_model(d, ch):  # model_dict, input_channels(3)  d是读取yaml文件�
 
         n = n_ = max(round(n * gd), 1) if n > 1 else n  # depth gain  控制深度的代码，往往是C3模块需要乘以深度倍率
         if m in (Conv, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, MixConv2d, Focus, CrossConv,
-                 BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, SE, ECA, CBAM, CoordAtt ,MobileOne, CBRM, Shuffle_Block, conv_bn_relu_maxpool,ShuffleNetV2_InvertedResidual):  #判读这一层的模块是什么结构
+                 BottleneckCSP, C3, C3TR, C3SPP, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, SE, ECA, CBAM, CoordAtt ,MobileOne, CBRM, Shuffle_Block, conv_bn_relu_maxpool,ShuffleNetV2_InvertedResidual,
+                 VoVGSCSP, VoVGSCSPC, GSConvns
+
+
+                 ):  #判读这一层的模块是什么结构
             #这部分代码是conv层需要执行的
             c1, c2 = ch[f], args[0]
             if c2 != no:  # if not output  判读c2 输出通道数是否需要乘以yaml文件中的宽度倍率
@@ -275,7 +279,9 @@ def parse_model(d, ch):  # model_dict, input_channels(3)  d是读取yaml文件�
             #将c1 c2和args中的参数拼接起来，因为args中的参数是残缺的，少了输入输出通道数
             args = [c1, c2, *args[1:]]   #【3，32，6，2，2】参数补全后，可以直接进行卷基层的参数初始化工作
             #经过卷基层后，下一个层是c3 BottleneckCSP等模块
-            if m in [BottleneckCSP, C3, C3TR, C3Ghost, C3x]:
+            if m in [BottleneckCSP, C3, C3TR, C3Ghost, C3x,
+                     VoVGSCSP, VoVGSCSPC
+                     ]:
                 args.insert(2, n)  # number of repeats  补全n这个参数，作为c3最终初始化的参数
                 n = 1
         elif m is nn.BatchNorm2d:
